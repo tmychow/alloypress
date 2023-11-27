@@ -1,4 +1,9 @@
-body {
+import os
+
+def generate_stylesheet(output_dir):
+    """Generate default stylesheet."""
+    css_content = """
+    body {
     word-wrap: break-word;
     font-family: sans-serif;
     counter-reset: sidenote-number;
@@ -171,4 +176,6 @@ body .vc { color: #f8f8f2 } /* Name.Variable.Class */
 body .vg { color: #f8f8f2 } /* Name.Variable.Global */
 body .vi { color: #f8f8f2 } /* Name.Variable.Instance */
 body .vm { color: #f8f8f2 } /* Name.Variable.Magic */
-body .il { color: #ae81ff } /* Literal.Number.Integer.Long */
+body .il { color: #ae81ff } /* Literal.Number.Integer.Long */"""
+    with open(os.path.join(output_dir, "style.css"), "w") as file:
+        file.write(css_content)

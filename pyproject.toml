@@ -1,0 +1,21 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "alloypress"
+version = "0.0.3"
+authors = [{ name = "Trevor Chow", email = "tmychow@gmail.com"}]
+description = "HTML/CSS-only Python SSG with support for LaTeX, syntax highlighting and sidenotes."
+readme = "README.md"
+requires-python = ">=3.10"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = ["markdown", "pygments", "pyyaml", "latex2mathml"]
+include = ["/assets"]
+
+[project.urls]
+Homepage = "https://github.com/tmychow/alloypress"

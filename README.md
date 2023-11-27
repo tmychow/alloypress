@@ -31,6 +31,7 @@ My Python static site generator. It supports markdown, latex, syntax highlightin
 
 # structure
 
+```
 pycounts
 ├── LICENSE                    ┐ Package documentation
 ├── README.md                  ┘
@@ -42,3 +43,4 @@ pycounts
 │       └── style.css          ┘
 └── tests                      ┐
     └── ...                    ┘ Package tests
+```

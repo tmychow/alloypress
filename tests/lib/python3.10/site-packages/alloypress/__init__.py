@@ -1,0 +1,1 @@
+from alloypress.ssg import generate

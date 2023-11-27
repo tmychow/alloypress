@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <link rel="stylesheet" href="style.css"/>
+                <title>Test File</title>
+            </head>
+            <!-- If you're reading this, say hi! -->
+            <body>
+            <div class="container">
+            <div class="center-pane"><h1>Purpose</h1>
+<p>The purpose of this file is to show off the functionality of <code>alloypress</code>.</p>
+<h2>Markdown Support</h2>
+<p><code>Alloypress</code> supports the <a href="https://daringfireball.net/projects/markdown/syntax">original markdown syntax</a>:</p>
+<ul>
+<li><strong>bold</strong> and <em>italic</em> text</li>
+<li><a href="https://google.com">links</a></li>
+<li>and so on...</li>
+</ul>
+<h2>Latex Support</h2>
+<p>Beyond that, it also supports inline equations via <code>latex2mathml</code>, such as <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi>C</mi><mo stretchy="false">&#x00028;</mo><msub><mi>S</mi><mi>t</mi></msub><mo>&#x0002C;</mo><mi>K</mi><mo>&#x0002C;</mo><mi>t</mi><mo stretchy="false">&#x00029;</mo></mrow></math>, as well as block equations:</p>
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mrow><mi>C</mi><mo stretchy="false">&#x00028;</mo><msub><mi>S</mi><mi>t</mi></msub><mo>&#x0002C;</mo><mi>K</mi><mo>&#x0002C;</mo><mi>t</mi><mo stretchy="false">&#x00029;</mo><mo>&#x0003D;</mo><msub><mi>S</mi><mi>t</mi></msub><mi>N</mi><mo stretchy="false">&#x00028;</mo><msub><mi>d</mi><mn>1</mn></msub><mo stretchy="false">&#x00029;</mo><mo>&#x02212;</mo><mi>K</mi><msup><mi>e</mi><mrow><mo>&#x02212;</mo><mi>r</mi><mo stretchy="false">&#x00028;</mo><mi>T</mi><mo>&#x02212;</mo><mi>t</mi><mo stretchy="false">&#x00029;</mo></mrow></msup><mi>N</mi><mo stretchy="false">&#x00028;</mo><msub><mi>d</mi><mn>2</mn></msub><mo stretchy="false">&#x00029;</mo></mrow></math>
+
+<h2>Syntax Highlighting</h2>
+<p>It also supports syntax highlighting for python:</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fizzbuzz</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">15</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;fizzbuzz&quot;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;fizz&quot;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">5</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;buzz&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+
+<h2>Sidenotes</h2>
+<p>It also supports sidenotes<span class="sidenote-count"><input type="checkbox" class="checkbox"><span class="sidenote">such as this</span></span>, which are displayed inline on narrow devices.</p></div></div><div class="footer"> <hr>hic sunt dracones</div></body></html>

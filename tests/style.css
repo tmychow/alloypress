@@ -1,5 +1,4 @@
-
-    body {
+body {
     word-wrap: break-word;
     font-family: sans-serif;
     counter-reset: sidenote-number;

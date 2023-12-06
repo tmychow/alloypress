@@ -2,8 +2,7 @@ import os
 
 def generate_stylesheet(output_dir):
     """Generate default stylesheet."""
-    css_content = """
-    body {
+    css_content = """body {
     word-wrap: break-word;
     font-family: sans-serif;
     counter-reset: sidenote-number;

@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "alloypress"
-version = "0.1.0"
+version = "0.1.1"
 authors = [{ name = "Trevor Chow", email = "tmychow@gmail.com"}]
 description = "HTML/CSS-only Python SSG with support for LaTeX, syntax highlighting and sidenotes."
 readme = "README.md"

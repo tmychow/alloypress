@@ -172,3 +172,23 @@ body .vg { color: #f8f8f2 } /* Name.Variable.Global */
 body .vi { color: #f8f8f2 } /* Name.Variable.Instance */
 body .vm { color: #f8f8f2 } /* Name.Variable.Magic */
 body .il { color: #ae81ff } /* Literal.Number.Integer.Long */
+
+.tag1, .tag2, .tag3, .tag4{
+    display: none
+}
+
+body:has(#tag1:checked) .tag1 {
+    display: block
+}
+
+body:has(#tag2:checked) .tag2 {
+    display: block
+}
+
+body:has(#tag3:checked) .tag3 {
+    display: block
+}
+
+body:has(#tag4:checked) .tag4 {
+    display: block
+}

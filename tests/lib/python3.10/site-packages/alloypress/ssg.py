@@ -11,7 +11,10 @@ from pygments.formatters import HtmlFormatter
 
 import latex2mathml.converter
 
+from alloypress.stylesheet import css_content
 from alloypress.stylesheet import generate_stylesheet
+
+all_tags = set()
 
 def create_index(input_dir = "./raw", output_dir = "./"):
     pages = {}
@@ -36,22 +39,44 @@ title: Index
 ---
 
 # ''' + stripped_dir
-        
+        setoftags = set()
+        page_list = ""
         for k, v in sorted(pages[dir_name].items(), key=lambda x: x[1].get('date') if x[1].get('date') is not None else datetime.date.min, reverse=True):
             if k != 'index.md':
-                index_md += f'''
+                page_list += f'''
+<p class="''' + ' '.join(v.get('tags')) + '''"><a href="./''' + k.replace('.md', '.html') + '''">''' + v.get('title') + '''</a></p>'''
+                setoftags.update(v.get('tags'))
+                all_tags.update(v.get('tags'))
+        toggles = ''
+        for tag in sorted(setoftags):
+            toggles += f'''
+<input type="checkbox" id="''' + tag + '''" checked>
+<label for="''' + tag + '''">''' + tag + '''</label>'''
+        index_md += toggles
+        index_md += page_list
+        output_path = os.path.join(dir_name, 'index.md')
+        with open(output_path, 'w') as file:
+            file.write(index_md)
 
-[{v.get('title')}]({os.path.join('./', k.replace('.md', '.html'))})'''
-            output_path = os.path.join(dir_name, 'index.md')
-            with open(output_path, 'w') as file:
-                file.write(index_md)
+def update_css(output_dir = "./"):
+    with open(os.path.join(output_dir, "style.css"), "a") as file:
+        tag_css = '''
 
-def convert(input_dir = "./raw", output_dir = "./", stylesheet = None):
+'''
+        tag_css += ', '.join('.' + tag for tag in sorted(all_tags))
+        tag_css += '''{
+    display: none
+}'''
+        for tag in sorted(all_tags):
+            tag_css += f'''
+
+body:has(#{tag}:checked) .{tag} {{
+    display: block
+}}'''
+        file.write(tag_css)
+
+def convert(input_dir = "./raw", output_dir = "./"):
     """Generate static site."""
-    if stylesheet is None:
-        generate_stylesheet(output_dir)
-        stylesheet = "style.css"
-
     for dir_name, subdir_list, file_list in os.walk(input_dir):
         for fname in file_list:
             if fname.endswith(".md"):
@@ -95,12 +120,14 @@ def convert(input_dir = "./raw", output_dir = "./", stylesheet = None):
                 <title>''' + header.get('title') + '''</title>
             </head>
             <!-- If you're reading this, say hi! -->
-            <body>
+            <body class="''' + parent_dir + '''">
             <div class="container">
             <div class="center-pane">''')
                     file.write(html)
                     file.write(r'''</div></div><div class="footer"> <hr>hic sunt dracones</div></body></html>''')
 
-def generate(input_dir = "./raw", output_dir = "./", stylesheet = None):
+def generate(input_dir = "./raw", output_dir = "./"):
+    generate_stylesheet(css_content, output_dir)
     create_index(input_dir, output_dir)
-    convert(input_dir, output_dir, stylesheet)
+    update_css(output_dir)
+    convert(input_dir, output_dir)

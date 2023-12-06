@@ -25,13 +25,13 @@ It supports:
 - LaTeX via `latex2mathml` inside `$` and `$$` delimiters
 - Syntax highlighting for Python via `pygments`
 - Sidenotes which are displayed inline on narrow devices
-- Automatic generation of an index page for each top-level folder
+- Sortable and tag-filtered index page for each top-level folder
 
 ## To Be Implemented
 
-- [ ] Filtering by tags for posts in the index page
 - [ ] Clearing old files before generating new ones
 - [ ] Support for other languages via `pygments`
 - [ ] Sidebar-based navigation
 - [ ] Embedding-based search across all pages
+- [ ] Post summaries on the index page via yaml frontmatter
 - [ ] More coming soon...

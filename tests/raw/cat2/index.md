@@ -9,6 +9,6 @@ title: Index
 <label for="tag2">tag2</label>
 <input type="checkbox" id="tag4" checked>
 <label for="tag4">tag4</label>
-<p class="tag1 tag2 tag4"><a href="./entry3.html">Entry 3</a></p>
-<p class="tag1 tag2"><a href="./entry2.html">Entry 2</a></p>
-<p class="tag1 tag2"><a href="./entry1.html">Entry 1</a></p>
+<p class="tag1 tag2 tag4"><a href="cat2/entry3.html">Entry 3</a></p>
+<p class="tag1 tag2"><a href="cat2/entry2.html">Entry 2</a></p>
+<p class="tag1 tag2"><a href="cat2/entry1.html">Entry 1</a></p>

@@ -44,7 +44,7 @@ title: Index
         for k, v in sorted(pages[dir_name].items(), key=lambda x: x[1].get('date') if x[1].get('date') is not None else datetime.date.min, reverse=True):
             if k != 'index.md':
                 page_list += f'''
-<p class="''' + ' '.join(v.get('tags')) + '''"><a href="./''' + k.replace('.md', '.html') + '''">''' + v.get('title') + '''</a></p>'''
+<p class="''' + ' '.join(v.get('tags')) + '''"><a href="''' + stripped_dir + '''/''' + k.replace('.md', '.html') + '''">''' + v.get('title') + '''</a></p>'''
                 setoftags.update(v.get('tags'))
                 all_tags.update(v.get('tags'))
         toggles = ''

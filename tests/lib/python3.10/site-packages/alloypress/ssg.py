@@ -94,7 +94,7 @@ def convert(input_dir = "./raw", output_dir = "./"):
                     for block in display_math_blocks:
                         mkd = mkd.replace(f"$${block}$$", latex2mathml.converter.convert(rf"{block}", display="block"))
 
-                    inline_math_blocks = re.findall(r"\$(?!\$)(.*?)\$(?!\$)", mkd, re.DOTALL)
+                    inline_math_blocks = re.findall(r"\$(?!\$)(.*?[^\\])\$(?!\$)", mkd, re.DOTALL)
                     for block in inline_math_blocks:
                         mkd = mkd.replace(f"${block}$", latex2mathml.converter.convert(rf"{block}", display="inline"))
 

@@ -16,7 +16,7 @@ The purpose of this file is to show off the functionality of `alloypress`.
 
 ## Latex Support
 
-Beyond that, it also supports inline equations via `latex2mathml`, such as $C(S_t, K, t)$, as well as block equations:
+Beyond that, it also supports inline equations via `latex2mathml`, such as $C(S_t, K, t)$ or even with dollar signs such as $\$10$, as well as block equations:
 
 $$ C(S_t, K, t) = S_t N(d_1) - K e^{-r(T-t)} N(d_2) $$
 

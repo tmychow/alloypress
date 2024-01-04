@@ -2,6 +2,8 @@
 
 A Python static site generator which I use for [my personal website](https://tmychow.com).
 
+Made using the [Python Packaging User Guide](https://packaging.python.org/en/latest/tutorials/packaging-projects/).
+
 ## Getting Started
 
 Install via `pip install alloypress`.

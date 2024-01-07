@@ -1,1 +1,1 @@
-from alloypress.ssg import generate
+from alloypress.ssg import StaticSite

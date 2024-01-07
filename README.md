@@ -11,8 +11,10 @@ Install via `pip install alloypress`.
 Run the following Python code in the root directory of your site:
 
 ```
-from alloypress import generate
-generate()
+from alloypress import StaticSite
+
+ssg = StaticSite()
+ssg.generate()
 ```
 
 An example of this can be seen in `./tests`. It will take every `.md` file in `./raw` and generate the HTML in `./`.
@@ -28,10 +30,10 @@ It supports:
 - Syntax highlighting for Python via `pygments`
 - Sidenotes which are displayed inline on narrow devices
 - Sortable and tag-filtered index page for each top-level folder
+- Only re-generates HTML if the Markdown has been modified, and deletes orphaned HTML files
 
 ## To Be Implemented
 
-- [ ] Clearing old files before generating new ones
 - [ ] Support for other languages via `pygments`
 - [ ] Sidebar-based navigation
 - [ ] Embedding-based search across all pages

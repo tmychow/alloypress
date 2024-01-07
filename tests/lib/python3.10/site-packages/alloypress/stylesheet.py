@@ -1,5 +1,3 @@
-import os
-
 css_content = """body {
     word-wrap: break-word;
     font-family: sans-serif;
@@ -80,6 +78,10 @@ a {
         width: 100%;
         display: block;
     }
+}
+
+.center-pane img {
+    max-width: 100%;
 }
 
 .sidenote-count {
@@ -174,8 +176,3 @@ body .vg { color: #f8f8f2 } /* Name.Variable.Global */
 body .vi { color: #f8f8f2 } /* Name.Variable.Instance */
 body .vm { color: #f8f8f2 } /* Name.Variable.Magic */
 body .il { color: #ae81ff } /* Literal.Number.Integer.Long */"""
-
-def generate_stylesheet(css_content, output_dir):
-    """Generate default stylesheet."""
-    with open(os.path.join(output_dir, "style.css"), "w") as file:
-        file.write(css_content)

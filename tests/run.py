@@ -1,3 +1,4 @@
-from alloypress import generate
+from alloypress import StaticSite
 
-generate()
+ssg = StaticSite()
+ssg.generate()

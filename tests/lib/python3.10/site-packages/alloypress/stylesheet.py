@@ -18,7 +18,9 @@ a {
 }
 
 .center-pane {
-    width: 50%;
+    width: 100%;
+    max-width: 36rem;
+    padding: 1em;
     margin-left: auto;
     margin-right: auto;
 }

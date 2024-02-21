@@ -4,6 +4,8 @@ import yaml
 import re
 import datetime
 
+import shutil
+
 from pygments import highlight
 from pygments.lexers import PythonLexer
 from pygments.formatters import HtmlFormatter
@@ -13,13 +15,14 @@ import latex2mathml.converter
 from alloypress.stylesheet import css_content
 
 class StaticSite:
-    def __init__(self, input_dir = "./raw", output_dir = "./"):
+    def __init__(self, input_dir = "./raw", output_dir = "./", custom_css = None):
         """
         Initialise SSG object with input and output directories.
         Prepare for a set of tags and a dictionary of pages.
         """
         self.input_dir = input_dir
         self.output_dir = output_dir
+        self.custom_css = custom_css
         self.all_tags = set()
         self.pages = {}
         self.generated_html_files = set()
@@ -28,8 +31,11 @@ class StaticSite:
         """
         Generate default stylesheet in output directory.
         """
-        with open(os.path.join(self.output_dir, "style.css"), "w") as file:
-            file.write(css_content)
+        if self.custom_css:
+            shutil.copy(self.custom_css, os.path.join(self.output_dir, "style.css"))
+        else:
+            with open(os.path.join(self.output_dir, "style.css"), "w") as file:
+                file.write(css_content)
     
     def collect_page_info(self):
         """
